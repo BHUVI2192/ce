@@ -3,10 +3,7 @@ import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Faculty from '@/components/Faculty';
-import Labs from '@/components/Labs';
-import Activities from '@/components/Activities';
-import Events from '@/components/Events';
+import HodSection from '@/components/HodSection';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -59,14 +56,11 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <Navbar />
       <Hero />
       <About />
-      <Faculty />
-      <Labs />
-      <Activities />
-      <Events />
+      <HodSection />
       <Contact />
       <Footer />
     </div>

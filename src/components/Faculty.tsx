@@ -1,64 +1,34 @@
 
-import { useEffect, useRef } from 'react';
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { useRef } from 'react';
+import { Mail } from "lucide-react";
 import { cn } from '@/lib/utils';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 const facultyMembers = [
   {
-    name: "Dr. Sarah Johnson",
-    title: "Department Chair, Professor",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300",
-    specialization: "Machine Learning & AI",
-    email: "sarah.johnson@university.edu",
-    phone: "+1 (555) 123-4567",
-    linkedin: "https://linkedin.com/in/"
+    name: "Dr. Chethan L S",
+    title: "Associate Professor & HOD",
+    image: "/lovable-uploads/067e8b5f-149a-4441-8a32-9831f90db6a6.png",
+    email: "chethan.ls@pestrust.edu.in",
+    education: "Ph.D",
+    experience: "11 years"
   },
   {
-    name: "Dr. Michael Chen",
+    name: "Mrs. Yojana Yadav",
     title: "Associate Professor",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300",
-    specialization: "Computer Architecture",
-    email: "michael.chen@university.edu",
-    phone: "+1 (555) 123-4568",
-    linkedin: "https://linkedin.com/in/"
+    image: "/lovable-uploads/14f1f6d4-a8d4-46c5-8cd0-ae6afa3bb3e8.png",
+    email: "yojanayadav@pestrust.edu.in",
+    education: "M.Tech (Ph.D)",
+    experience: "18 years"
   },
   {
-    name: "Dr. Lakshmi Patel",
+    name: "Mrs. Arpitha J C",
     title: "Associate Professor",
-    image: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&q=80&w=300",
-    specialization: "Computer Networks",
-    email: "lakshmi.patel@university.edu",
-    phone: "+1 (555) 123-4569",
-    linkedin: "https://linkedin.com/in/"
-  },
-  {
-    name: "Dr. James Wilson",
-    title: "Assistant Professor",
-    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&q=80&w=300",
-    specialization: "Cybersecurity",
-    email: "james.wilson@university.edu",
-    phone: "+1 (555) 123-4570",
-    linkedin: "https://linkedin.com/in/"
-  },
-  {
-    name: "Dr. Sofia Rodriguez",
-    title: "Assistant Professor",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300",
-    specialization: "Embedded Systems",
-    email: "sofia.rodriguez@university.edu",
-    phone: "+1 (555) 123-4571",
-    linkedin: "https://linkedin.com/in/"
-  },
-  {
-    name: "Dr. David Kim",
-    title: "Lecturer",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300",
-    specialization: "Software Engineering",
-    email: "david.kim@university.edu",
-    phone: "+1 (555) 123-4572",
-    linkedin: "https://linkedin.com/in/"
-  },
+    image: "/lovable-uploads/ec0403a2-b064-4d70-bf9e-3af19623574d.png",
+    email: "admin@admin.com",
+    education: "M.Tech",
+    experience: "7 years"
+  }
 ];
 
 export default function Faculty() {
@@ -66,59 +36,67 @@ export default function Faculty() {
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
 
   return (
-    <section id="faculty" className="bg-engDept-100 py-20" ref={sectionRef}>
+    <section id="faculty" className="bg-gradient-to-b from-blue-50 to-purple-100 py-20" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        <h2 className="section-heading">Our Faculty</h2>
-        <p className="text-engDept-700 text-center max-w-3xl mx-auto mb-12">
-          Our department is home to world-class faculty members dedicated to advancing knowledge in computer engineering through research and excellence in teaching.
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-blue-900 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:rounded-full">
+          Our Faculty
+        </h2>
+        
+        <p className="text-blue-800 text-center max-w-3xl mx-auto mb-12">
+          Our department is home to experienced faculty members dedicated to advancing knowledge in computer engineering through research and excellence in teaching.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {facultyMembers.map((member, index) => (
             <div 
               key={member.name} 
               className={cn(
-                "reveal-element bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl",
-                isVisible ? "visible" : "",
+                "bg-gradient-to-r from-white to-purple-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl",
+                isVisible ? "visible opacity-100 translate-y-0" : "opacity-0 translate-y-12",
               )}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="relative group">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-64 object-cover"
-                />
-                <div className="absolute inset-0 bg-engDept-900 bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
-                  <div className="flex space-x-4">
-                    <a href={`mailto:${member.email}`} className="text-white bg-engDept-700 p-2 rounded-full hover:bg-engDept-600 transition-colors">
-                      <Mail size={20} />
-                    </a>
-                    <a href={`tel:${member.phone}`} className="text-white bg-engDept-700 p-2 rounded-full hover:bg-engDept-600 transition-colors">
-                      <Phone size={20} />
-                    </a>
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-white bg-engDept-700 p-2 rounded-full hover:bg-engDept-600 transition-colors">
-                      <Linkedin size={20} />
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-0 group-hover:opacity-90 flex items-end justify-center transition-all duration-300">
+                  <div className="p-4 text-center w-full">
+                    <a href={`mailto:${member.email}`} className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full text-white hover:bg-white/30 transition-colors">
+                      <Mail size={16} />
+                      Contact
                     </a>
                   </div>
                 </div>
               </div>
+              
               <div className="p-6">
-                <h3 className="font-bold text-xl text-engDept-900">{member.name}</h3>
-                <p className="text-engDept-600">{member.title}</p>
-                <p className="text-engDept-500 text-sm mt-2">Specialization: {member.specialization}</p>
+                <h3 className="font-bold text-xl text-blue-900">{member.name}</h3>
+                <p className="text-blue-700">{member.title}</p>
+                
+                <div className="mt-4 space-y-2 text-sm">
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-blue-800">Education:</span>
+                    <span className="text-blue-700">{member.education}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-blue-800">Experience:</span>
+                    <span className="text-blue-700">{member.experience}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-blue-500 truncate">
+                    <span className="font-semibold">Email:</span>
+                    <a href={`mailto:${member.email}`} className="hover:text-blue-700 hover:underline">
+                      {member.email}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <a 
-            href="#" 
-            className="inline-block px-6 py-3 rounded-lg border border-engDept-800 text-engDept-800 font-medium hover:bg-engDept-800 hover:text-white transition-colors"
-          >
-            View All Faculty Members
-          </a>
         </div>
       </div>
     </section>

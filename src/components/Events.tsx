@@ -7,34 +7,34 @@ import { Button } from "@/components/ui/button";
 
 const events = [
   {
-    title: "Tech Innovation Showcase 2024",
+    title: "Git Workshop",
     date: "May 15, 2024",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400",
-    description: "Annual exhibition featuring student projects, research demonstrations, and industry collaboration opportunities.",
-    location: "Engineering Building, Main Hall",
-    link: "#"
-  },
-  {
-    title: "AI and Ethics Workshop",
-    date: "June 8, 2024",
-    image: "https://images.unsplash.com/photo-1535378620166-273708d44e4c?auto=format&fit=crop&q=80&w=400",
-    description: "A workshop exploring ethical implications of AI technologies with guest speakers from industry and academia.",
-    location: "Virtual Event",
-    link: "#"
-  },
-  {
-    title: "Summer Coding Bootcamp",
-    date: "July 10-24, 2024",
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=400",
-    description: "Intensive two-week program for students to enhance programming skills with real-world applications.",
+    image: "/lovable-uploads/1fb97713-4bcd-4192-958e-a45814b80269.png",
+    description: "Hands-on workshop on Git version control system, covering basics to advanced branching strategies.",
     location: "Computer Lab 305",
     link: "#"
   },
   {
-    title: "Computer Engineering Alumni Networking Event",
+    title: "Ethnic Day",
+    date: "June 8, 2024",
+    image: "/lovable-uploads/9d7ca8f9-0982-4b9e-abe4-1eb5d5d546cb.png",
+    description: "Annual cultural celebration showcasing the diverse cultural heritage of our students and faculty.",
+    location: "University Auditorium",
+    link: "#"
+  },
+  {
+    title: "Forum Inauguration",
+    date: "July 10, 2024",
+    image: "/lovable-uploads/ef1fb31c-c6ff-4754-9bd3-408b10550f0c.png",
+    description: "Inauguration of the Computer Engineering Forum with industry leaders as chief guests.",
+    location: "Seminar Hall",
+    link: "#"
+  },
+  {
+    title: "Tech Talks",
     date: "August 5, 2024",
-    image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=400",
-    description: "Connect with alumni working in leading tech companies and explore career opportunities in the industry.",
+    image: "/lovable-uploads/52651db7-0a9d-42b8-90b0-6840e2c79f0b.png",
+    description: "Series of technical talks by industry experts on emerging technologies in computer engineering.",
     location: "University Conference Center",
     link: "#"
   }
@@ -45,10 +45,13 @@ export default function Events() {
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
 
   return (
-    <section id="events" className="bg-white py-20" ref={sectionRef}>
+    <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        <h2 className="section-heading">Upcoming Events</h2>
-        <p className="text-engDept-700 text-center max-w-3xl mx-auto mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-blue-900 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:rounded-full">
+          Upcoming Events
+        </h2>
+        
+        <p className="text-blue-800 text-center max-w-3xl mx-auto mb-12">
           Join us for these exciting events hosted by the Department of Computer Engineering.
         </p>
 
@@ -57,8 +60,8 @@ export default function Events() {
             <div 
               key={event.title}
               className={cn(
-                "reveal-element card overflow-hidden",
-                isVisible ? "visible" : ""
+                "bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               )}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
@@ -69,19 +72,19 @@ export default function Events() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 right-4 bg-white px-3 py-2 rounded-lg shadow-md flex items-center gap-2">
-                  <Calendar size={16} className="text-engDept-700" />
-                  <span className="text-sm font-medium text-engDept-800">{event.date}</span>
+                  <Calendar size={16} className="text-blue-700" />
+                  <span className="text-sm font-medium text-blue-800">{event.date}</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-engDept-900 mb-2">{event.title}</h3>
-                <p className="text-engDept-700 mb-4">{event.description}</p>
-                <p className="text-engDept-600 text-sm mb-4">
+                <h3 className="text-xl font-bold text-blue-900 mb-2">{event.title}</h3>
+                <p className="text-blue-700 mb-4">{event.description}</p>
+                <p className="text-blue-600 text-sm mb-4">
                   <strong>Location:</strong> {event.location}
                 </p>
-                <Button asChild>
+                <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                   <a href={event.link} className="inline-block">
-                    Register Now
+                    Learn More
                   </a>
                 </Button>
               </div>
@@ -89,12 +92,48 @@ export default function Events() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button variant="outline" size="lg" asChild>
+        <div className="mt-16 text-center">
+          <Button variant="outline" size="lg" asChild className="border-blue-500 text-blue-700 hover:bg-blue-50">
             <a href="#" className="inline-block">
               View All Events
             </a>
           </Button>
+        </div>
+        
+        {/* Past Events Gallery */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-blue-900 mb-8 text-center">Event Gallery</h3>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="rounded-lg overflow-hidden h-40 transform hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg">
+              <img 
+                src="/lovable-uploads/2f2a9743-5ebd-4e58-809b-91bee5332ce4.png" 
+                alt="Student group photo" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden h-40 transform hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg">
+              <img 
+                src="/lovable-uploads/341ae6f4-d962-49fa-8cec-8715557295db.png" 
+                alt="Department event" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden h-40 transform hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg">
+              <img 
+                src="/lovable-uploads/82a6248a-d6e3-4bda-b79c-e9240d5cc439.png" 
+                alt="Students in classroom" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden h-40 transform hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg">
+              <img 
+                src="/lovable-uploads/d37ff7c8-fa66-464b-b038-11fc4f08aad8.png" 
+                alt="Technical presentation" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
