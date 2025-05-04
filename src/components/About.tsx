@@ -1,5 +1,6 @@
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { cn } from '@/lib/utils';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 export default function About() {
