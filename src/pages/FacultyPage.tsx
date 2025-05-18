@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -8,7 +7,7 @@ const facultyMembers = [
   {
     name: "Dr. Chethan L S",
     title: "Associate Professor & HOD",
-    image: "/lovable-uploads/067e8b5f-149a-4441-8a32-9831f90db6a6.png",
+    image: "", // Placeholder, user will upload HOD photo
     email: "chethan.ls@pestrust.edu.in",
     education: "Ph.D",
     experience: "11 years",
@@ -18,7 +17,7 @@ const facultyMembers = [
   {
     name: "Mrs. Yojana Yadav",
     title: "Associate Professor",
-    image: "/lovable-uploads/14f1f6d4-a8d4-46c5-8cd0-ae6afa3bb3e8.png",
+    image: "/lovable-uploads/84ac62dd-e50e-4399-be2d-f9061be4b9dc.png",
     email: "yojanayadav@pestrust.edu.in",
     education: "M.Tech (Ph.D)",
     experience: "18 years",
@@ -28,7 +27,7 @@ const facultyMembers = [
   {
     name: "Mrs. Arpitha J C",
     title: "Associate Professor",
-    image: "/lovable-uploads/ec0403a2-b064-4d70-bf9e-3af19623574d.png",
+    image: "/lovable-uploads/1525a3a7-d60f-4415-8c98-49db214a3b62.png",
     email: "admin@admin.com",
     education: "M.Tech",
     experience: "7 years",
@@ -129,23 +128,6 @@ const FacultyPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-      
-      {/* Join Our Team */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Join Our Team</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-8">
-            We're always looking for talented educators and researchers to join our department.
-            If you're passionate about computer engineering and teaching, we'd love to hear from you.
-          </p>
-          <a 
-            href="#" 
-            className="inline-flex items-center px-6 py-3 bg-white text-blue-900 rounded-lg hover:bg-blue-100 transition-colors"
-          >
-            View Current Openings
-          </a>
         </div>
       </section>
       

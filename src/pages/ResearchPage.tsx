@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -38,15 +37,12 @@ const ResearchPage = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-blue-900 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:rounded-full">
             Research Laboratories
           </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* AI & Machine Learning Lab */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src="/lovable-uploads/cc140892-4ce5-4367-8259-78011b72f410.png" 
-                  alt="AI & ML Lab" 
-                  className="w-full h-full object-cover"
-                />
+              {/* Place for lab image */}
+              <div className="h-48 flex items-center justify-center bg-blue-50">
+                <span className="text-blue-300 text-lg font-semibold opacity-70">Upload Image</span>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-900 mb-2">AI & Machine Learning Lab</h3>
@@ -64,14 +60,10 @@ const ResearchPage = () => {
                 </div>
               </div>
             </div>
-            
+            {/* IoT & Embedded Systems Lab */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src="/lovable-uploads/0e667ce6-c4d7-4f05-8422-50fea3c68591.png" 
-                  alt="IoT & Embedded Systems Lab" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="h-48 flex items-center justify-center bg-blue-50">
+                <span className="text-blue-300 text-lg font-semibold opacity-70">Upload Image</span>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-900 mb-2">IoT & Embedded Systems Lab</h3>
@@ -89,14 +81,10 @@ const ResearchPage = () => {
                 </div>
               </div>
             </div>
-            
+            {/* Software Engineering Lab */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src="/lovable-uploads/2f2a9743-5ebd-4e58-809b-91bee5332ce4.png" 
-                  alt="Software Engineering Lab" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="h-48 flex items-center justify-center bg-blue-50">
+                <span className="text-blue-300 text-lg font-semibold opacity-70">Upload Image</span>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-900 mb-2">Software Engineering Lab</h3>
@@ -114,14 +102,10 @@ const ResearchPage = () => {
                 </div>
               </div>
             </div>
-            
+            {/* Cybersecurity Lab */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src="/lovable-uploads/01f3a07d-cbf8-4e41-9a7b-345b424ce1ba.png" 
-                  alt="Cybersecurity Lab" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="h-48 flex items-center justify-center bg-blue-50">
+                <span className="text-blue-300 text-lg font-semibold opacity-70">Upload Image</span>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-900 mb-2">Cybersecurity Lab</h3>
