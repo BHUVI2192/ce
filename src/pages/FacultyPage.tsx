@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -7,7 +8,7 @@ const facultyMembers = [
   {
     name: "Dr. Chethan L S",
     title: "Associate Professor & HOD",
-    image: "", // Placeholder, user will upload HOD photo
+    image: "/lovable-uploads/729c8874-3b03-4d00-a205-f7398dfedf45.png", // Updated HOD photo
     email: "chethan.ls@pestrust.edu.in",
     education: "Ph.D",
     experience: "11 years",
@@ -137,3 +138,4 @@ const FacultyPage = () => {
 };
 
 export default FacultyPage;
+
