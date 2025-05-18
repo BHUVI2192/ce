@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
@@ -20,12 +20,13 @@ const resourceLinks = [
   { name: 'Careers', href: '#' }
 ];
 
+// Only Instagram social link
 const socialLinks = [
-  { name: 'Facebook', href: '#', icon: Facebook },
-  { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
-  { name: 'YouTube', href: '#', icon: Youtube },
-  { name: 'Instagram', href: '#', icon: Instagram }
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/c0de_ce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+    icon: Instagram
+  }
 ];
 
 export default function Footer() {
@@ -55,11 +56,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-blue-200">
                 <Mail size={18} />
-                <a href="mailto:compdept@pestrust.edu.in" className="hover:text-blue-100 hover:underline">compdept@pestrust.edu.in</a>
+                <a href="mailto:hodce@pestrust.edu.in" className="hover:text-blue-100 hover:underline">hodce@pestrust.edu.in</a>
               </li>
               <li className="flex items-center gap-3 text-blue-200">
                 <Phone size={18} />
-                <a href="tel:+911234567890" className="hover:text-blue-100 hover:underline">+91 123-456-7890</a>
+                <a href="tel:+919480000992" className="hover:text-blue-100 hover:underline">+91 94800 00992</a>
               </li>
             </ul>
           </div>
@@ -92,23 +93,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Only Instagram */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-b border-blue-700 pb-2">Stay Connected</h3>
-            <p className="text-blue-200 mb-4">Subscribe to our newsletter for updates on events, research, and opportunities.</p>
-            <form className="flex mb-6">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="px-4 py-2 rounded-l-md bg-blue-800 border border-blue-700 text-white w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-blue-400"
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 px-4 py-2 rounded-r-md hover:bg-blue-500 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <p className="text-blue-200 mb-4">Follow us on Instagram for updates on events, research, and opportunities.</p>
             <div className="flex space-x-4">
               {socialLinks.map(link => (
                 <a 
@@ -116,8 +104,10 @@ export default function Footer() {
                   href={link.href}
                   className="text-blue-200 hover:text-white transition-colors"
                   aria-label={link.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <link.icon size={20} />
+                  <link.icon size={24} />
                 </a>
               ))}
             </div>
@@ -136,3 +126,4 @@ export default function Footer() {
     </footer>
   );
 }
+

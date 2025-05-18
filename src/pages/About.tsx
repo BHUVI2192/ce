@@ -43,10 +43,13 @@ const About = () => {
       <section className="py-14 bg-gradient-to-br from-blue-100 to-purple-50">
         <div className="container mx-auto px-4 flex flex-col md:flex-row gap-12 items-center">
           <div className="flex-1 flex justify-center">
-            {/* Placeholder for HOD image */}
+            {/* HOD image updated */}
             <div className="h-40 w-40 rounded-2xl bg-white border-2 border-blue-300 flex items-center justify-center overflow-hidden shadow">
-              {/* User will upload HOD image later */}
-              <span className="text-blue-400 text-xl font-bold opacity-50">HOD Photo</span>
+              <img
+                src="/lovable-uploads/729c8874-3b03-4d00-a205-f7398dfedf45.png"
+                alt="Dr. Chethan L S"
+                className="object-cover w-full h-full"
+              />
             </div>
           </div>
           <div className="flex-1">
@@ -57,7 +60,7 @@ const About = () => {
             <div className="mt-4 p-3 rounded-xl bg-white/80 drop-shadow">
               <div className="font-semibold text-blue-900">Dr. Chethan L S</div>
               <div className="text-blue-700">Associate Professor & HOD</div>
-              <div className="text-blue-600 text-sm">Email: chethan.ls@pestrust.edu.in</div>
+              <div className="text-blue-600 text-sm">Email: hodce@pestrust.edu.in</div>
             </div>
           </div>
         </div>

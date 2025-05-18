@@ -21,8 +21,8 @@ export default function About() {
           )}>
             <div className="rounded-lg overflow-hidden shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300 bg-gradient-to-r p-1 from-blue-400 to-purple-400">
               <img 
-                src="/lovable-uploads/82a6248a-d6e3-4bda-b79c-e9240d5cc439.png" 
-                alt="Department Activities" 
+                src="/lovable-uploads/1725429c-d703-40f7-aab3-83fc5fdfb3b8.png" 
+                alt="Department Event"
                 className="w-full h-auto hover:scale-105 transition-all duration-500 rounded"
               />
             </div>
